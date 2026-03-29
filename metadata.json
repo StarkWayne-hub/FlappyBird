@@ -1,0 +1,5 @@
+{
+  "name": "Infinite Flappy Bird",
+  "description": "A never-ending Flappy Bird clone with smooth physics and infinite pipe generation.",
+  "requestFramePermissions": []
+}

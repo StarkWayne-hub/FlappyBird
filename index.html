@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Infinite Flappy Bird</title>
+    <script>
+      // Fix for "Cannot set property fetch of #<Window> which has only a getter"
+      // This happens when some libraries (like protobufjs) try to polyfill fetch.
+      try {
+        const originalFetch = window.fetch;
+        Object.defineProperty(window, 'fetch', {
+          get: () => originalFetch,
+          set: () => { /* ignore */ },
+          configurable: true,
+          enumerable: true
+        });
+      } catch (e) {
+        // If it's not configurable, we can't do much, but the error might still happen.
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
